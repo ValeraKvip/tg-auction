@@ -17,10 +17,10 @@ The application supports (or rather requires) working with two bots at once - de
 
 # Security
 From the side of the mini application **Telegram web app -> Server** User authentication is checked using the Telegram.WebApp.initData object:
-@See: [/functions/api/lots/lot.js](/functions/api/lots/lot.js)
-@See: [/functions/utils.js#tgvVerifyMiniApp](https://github.com/ValeraKvip/tg-auction/blob/5cf2f9aff98542b1ec033b8657a6be7d94125344/functions/utils.js#L11) 
+@See: [/functions/api/lots/lot.js](/functions/api/lots/lot.js)<br>
+@See: [/functions/utils.js#tgvVerifyMiniApp](https://github.com/ValeraKvip/tg-auction/blob/5cf2f9aff98542b1ec033b8657a6be7d94125344/functions/utils.js#L11) <br>
 
-From the webhook side, authentication is verified using a header X-Telegram-Bot-Api-Secret-Token:
+From the webhook side, authentication is verified using a header X-Telegram-Bot-Api-Secret-Token:<br>
 @See [/functions//api/hooks/hook.js](/functions//api/hooks/hook.js).
 
 
