@@ -1,0 +1,37 @@
+{
+  "name": "tgconminiapps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node setup-dev.js",
+    "dev-mock": "node setup-dev.js --mock-db",
+    "dev1156": " firebase emulators:exec 'npm run x' --ui --only 'functions,firestore'",
+    "t11est": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "npx eslint ./**"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ngrok/ngrok": "^0.6.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-svelte": "^2.33.2",
+    "svelte": "^4.2.1"
+  },
+  "eslintIgnore": [
+    "ui-debug.log",
+    "package-lock.json",
+    "package.json",
+    "errors.json",
+    "firestore-debug.log",
+    "storage.rules",
+    "readme.txt",
+    "vite.config.js",
+    "svelte.config.js",
+    "config-dev.json",
+    "firestore.indexes.json",
+    "firebase.json",
+    "config.json",
+    "firestore.rules"
+  ]
+}

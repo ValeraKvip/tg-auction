@@ -1,0 +1,73 @@
+{
+    "1":{
+        "server_status":401,
+        "message":"The application is used outside of telegram MiniAps."
+    },
+    "2":{
+        "server_status":400,
+        "message":"The application auction is over."
+    },
+    "3":{
+        "server_status":400,
+        "message":"The bid is no longer relevant."
+    },
+    "5":{
+        "server_status":400,
+        "message":"Telegram user not found or wrong."
+    },
+    "6":{
+        "server_status":404,
+        "message":"Lot not found or wrong"
+    },
+    "7":{
+        "server_status":400,
+        "message":"The bid exceeds the limit [10-10_000]$"
+    },
+    "8":{
+        "server_status":400,
+        "message":"The owner of the lot cannot bid."
+    },
+    "9":{
+        "server_status":400,
+        "message":"Your bid is already the highest. You cannot increase your own bid."
+    },
+    "10":{
+        "server_status":400,
+        "message":"startBid must be integer."
+    },
+    "11":{
+        "server_status":400,
+        "message":"The bid can be in the range of [10, 1000]."
+    },
+    "12":{
+        "server_status":400,
+        "message":"Title length exceed"
+    },
+    "13":{
+        "server_status":400,
+        "message":"Description length exceed"
+    },
+    "14":{
+        "server_status":400,
+        "message":"Preview length exceed"
+    },
+    "15":{
+        "server_status":400,
+        "message":"Preview have to be a link to the image"
+    },
+    "16":{
+        "server_status":400,
+        "message":"The auction is over the lot will be deleted automatically"
+    },
+    "17":{
+        "server_status":400,
+        "message":"Nice try. Only the person who created the lot can delete it."
+    },
+    "18":{
+        "server_status":400,
+        "message":"User Already exists"
+    }
+
+
+    
+}
