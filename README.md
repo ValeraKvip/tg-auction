@@ -91,6 +91,19 @@ VITE_TELEGRAM_DEEP_LINK=https://t.me/your-deep-link
 ```
 ![Create Telegram Web App](https://i.imgur.com/XM87G7U.png)
 
+### X-Telegram-Bot-Api-Secret-Token
+To make sure that requests to the server come from Telegram, you need to set a secret header [X-Telegram-Bot-Api-Secret-Token](https://core.telegram.org/bots/api#setwebhook).<br>
+
+1. Go to the project [root folder/functions](/functions).
+2. Create or Open the "**config.json**". Paste your auth tokens like this:
+```json
+{
+   //other keys
+  "X-Telegram-Bot-Api-Secret-Token":"a8e92344-bd20-4ca7-a82e-6acfa491b7a7", // 1-256 characters. Only characters: [A-Z, a-z, 0-9, _ , - ] are allowed. 
+}
+```
+You can enter any string that meets the requirements - or just generate a random GUID.
+
 ## Ngrok
 Telegram bot requires an SSL connection to the server. Therefore, to connect your development environment, you need ngrok.
 1. Go to [ngrok](https://ngrok.com/) and create account.

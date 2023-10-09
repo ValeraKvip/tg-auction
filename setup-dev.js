@@ -23,6 +23,11 @@ async function setup() {
         }
 
 
+        if (!config['X-Telegram-Bot-Api-Secret-Token']) {
+            console.error("\x1b[31m%s\x1b[0m", 'X-Telegram-Bot-Api-Secret-Token unset. Please, set X-Telegram-Bot-Api-Secret-Token in config.js.')
+            console.info("%s \x1b[34m%s\x1b[0m %s", 'It can be any valid string. Follow the link:', 'https://core.telegram.org/bots/api#setwebhook', 'for more info.\n')
+            process.exit(1);
+        }
 
         const { emulators } = firebaseConfig;
         if (!emulators) {
@@ -58,7 +63,7 @@ async function setup() {
         fs.writeFileSync("./config-dev.json", JSON.stringify(devConfig));
 
         console.log("\x1b[32m%s\x1b[0m", '# Setup Telegram Webhook.')
-        const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN_DEV}/setWebhook?url=${devConfig.ngrokFunctions}/${process.env.GCLOUD_PROJECT}/us-central1/app/api/hook`);
+        const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN_DEV}/setWebhook?url=${devConfig.ngrokFunctions}/${process.env.GCLOUD_PROJECT}/us-central1/app/api/hook&secret_token=${config['X-Telegram-Bot-Api-Secret-Token']}`);
         if (response.ok) {
             console.log("\x1b[32m%s\x1b[0m", '# Telegram Webhook is set.')
         } else {
@@ -77,7 +82,7 @@ async function setup() {
         
         console.log("\x1b[31m%s\x1b[0m", '############### DANGER #################');
         console.log("\x1b[32m%s\x1b[0m",`Follow the link to install the Telegram webhook for PRODUCTION bot`);
-        console.log("\x1b[34m%s\x1b[0m",`https://api.telegram.org/bot${config.BOT_TOKEN}/setWebhook?url=https://us-central1-${process.env.GCLOUD_PROJECT}.cloudfunctions.net/app/api/hook`);
+        console.log("\x1b[34m%s\x1b[0m",`https://api.telegram.org/bot${config.BOT_TOKEN}/setWebhook?url=https://us-central1-${process.env.GCLOUD_PROJECT}.cloudfunctions.net/app/api/hook&secret_token=${config['X-Telegram-Bot-Api-Secret-Token']}`);
         
         console.log("\x1b[31m%s\x1b[0m", '########################################');
 

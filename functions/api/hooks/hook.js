@@ -11,10 +11,18 @@ const finishLineHook = require("./finishLineHook");
 const deleteHook = require("./deleteHook");
 const finishHook = require("./finishHook");
 const { getBlankResponse } = require("../../utils");
+const config = require('../../config.json');
+
+
 
 const router = Router();
 router.use(async function (request, response) {
     console.log('#hooks')
+    const secretToken = request.get('X-Telegram-Bot-Api-Secret-Token')
+   
+    if (secretToken !== config['X-Telegram-Bot-Api-Secret-Token']) {
+        return response.sendStatus(401);
+    }
 
     bot.handleUpdate(request.body, response);
 
