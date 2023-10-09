@@ -31,4 +31,5 @@ From the webhook side, authentication is verified using a header X-Telegram-Bot-
 **requestWriteAccess** - The bot sends various messages to the user about the lot To do this, permission is requested from the User (permission may not be available if he clicked on the share link).<br>
 **HapticFeedback.notificationOccurred** - To demonstrate successful or unsuccessful payment.<br>
 **ThemeParams** - To synchronize the Telegram theme and the app <br>
+**WebAppUser.language_code** - For localization. English(en) and Ukrainian(uk) are currently supported.
 And others... but I'm too lazy to describe them.
