@@ -37,3 +37,7 @@ From the webhook side, authentication is verified using a header X-Telegram-Bot-
 **MainButton** - Used to confirm tasks.  [@see](/hosting/src/routes/lots/create/+page.svelte)   [@see](/hosting/src/routes/lots/[lot]/+page.svelte) <br>
 
 And others...
+
+# NOTE
+When you open the application, you will see a certain number of mock lots. If you have a question why when you add lots you do not see them in this list, it is because the developer has limited the display of new lots. In case all the apps in the contest are public and other participants could not publish any garbage.
+You can find created lots in the menu or in the bot.
