@@ -1,3 +1,5 @@
+For the contest judges: [Contest.md](/Contest.md)
+
 # Install
 
 1. `git clone https://github.com/ValeraKvip/tg-auction.git`

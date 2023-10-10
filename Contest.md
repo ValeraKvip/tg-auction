@@ -25,13 +25,15 @@ From the webhook side, authentication is verified using a header X-Telegram-Bot-
 
 
 # Mini App API
-**isVersionAtLeast** - Used to check the version before writing/reading to the cloud storage. [@see](/hosting//src/routes/lots/create/+page.svelte)<br>
+**isVersionAtLeast** - Used to check the version before writing/reading to the cloud storage. [@see](/hosting/src/routes/lots/create/+page.svelte)<br>
 **CloudStorage** - Used to save a [draft](/hosting//src/routes/lots/create/+page.svelte) when creating a lot, and for [tutorials](/hosting//src/components/slot/TutorialView.svelte)<br>
-**openLink** - Used to distribute the share link.<br>
+**openLink** - Used to distribute the share link.<br> 
+**openInvoice** -Used for invoicing the bid for a lot [@see](/hosting/src/routes/lots/[lot]/+page.svelte) <br>
 **requestWriteAccess** - The bot sends various messages to the user about the lot To do this, permission is requested from the User (permission may not be available if he clicked on the share link).<br>
 **HapticFeedback.notificationOccurred** - To demonstrate successful or unsuccessful payment.<br>
 **ThemeParams** - To synchronize the Telegram theme and the app <br>
 **WebAppUser.language_code** - For localization. English(en) and Ukrainian(uk) are currently supported.<br>
-**BackButton** - Used to handle backward navigation <br>
-**MainButton** - Used to confirm tasks. 
-And others... but I'm too lazy to describe them.
+**BackButton** - Used to handle backward navigation [@see](/hosting/src/routes/+layout.svelte) <br>
+**MainButton** - Used to confirm tasks.  [@see](/hosting/src/routes/lots/create/+page.svelte)   [@see](/hosting/src/routes/lots/[lot]/+page.svelte) <br>
+
+And others...
