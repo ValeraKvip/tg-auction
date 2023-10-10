@@ -219,13 +219,20 @@ This can happen if you use your own domain or launch the project incorrectly. If
 1. Go to `functions/config.json`
 2. Insert your domain  to `CUSTOM_DOMAIN` only domain, without http or etc.
 3. re-deploy.
-
-> **ERR_NGROK_3004**, **ERR_NGROK_3200**.
+```json
+{
+   //other keys
+  "CUSTOM_DOMAIN":"telegram.org", 
+}
+```
+<br><br>
+> **ERR_NGROK_3004**, **ERR_NGROK_3200**, **ERR_NGROK_xxxx**.
 
 If you see this message when you open the app:<br>
 1. You haven't [started](https://github.com/ValeraKvip/tg-auction#run-dev) the dev server or it was closed due to a critical error. Open the terminal - go to the root folder `cd hosting` then `npm run dev` Do not close the terminal!
 2. Remember every time you [restart](https://github.com/ValeraKvip/tg-auction#run-dev) the development environment - the buttons in the development bot are no longer relevant and will open an outdated ngrok url. You have to write `/start` to the bot and it will send you the relevant buttons.
-3. Have you [set up](https://github.com/ValeraKvip/tg-auction#setup-deeplink) a deep link? 
+3. Have you [set up](https://github.com/ValeraKvip/tg-auction#setup-deeplink) a deep link?
+4. Perhaps **ngrok** is not installed correctly or you are not logged in.
 
 > 500 Internal error
 
@@ -235,6 +242,6 @@ Server error. (functions directory) See logs to find the error.
 
 The firestore database needs to create [indexes](https://firebase.google.com/docs/firestore/query-data/index-overview) for complex [queries](https://firebase.google.com/docs/firestore/query-data/queries). The easy way is to follow the link, and the index will be created automatically. But then there will be an out-of-sync with the [firestore.indexes.json](/firestore.indexes.json) file in your project. Therefore, it is more correct to create indexes in this file and then [deploy](https://firebase.google.com/docs/reference/firestore/indexes) them. Especially if you are going to continue to keep your code as open source.<br>
 You can also create indexes by clicking on links and then export them locally. Open a terminal in the root directory:
-```
+```js
 firebase firestore:indexes > firestore.indexes.json
 ```
