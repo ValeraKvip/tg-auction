@@ -3,11 +3,10 @@
 1. `git clone ValeraKvip/tg-auction`
 2. Make sure you have installed firebase cli  and are logged in [@see](https://firebase.google.com/docs/cli)
 3. Make sure you have the latest versions of **node.js** and **npm** installed
-4. git clone ....
-5. Open project root folder in termianl
-6. Type: `npm install` 
-7. Type: `cd hosting` then: `npm install`
-8. Type  `cd..` then: `cd functions` then: `npm install`
+4. Open project root folder in termianl
+5. Type: `npm install` 
+6. Type: `cd hosting` then: `npm install`
+7. Type  `cd..` then: `cd functions` then: `npm install`
 
 # Setup
 Before the first launch, you have to obtain the API keys and add them to the project.
@@ -25,11 +24,12 @@ Before the first launch, you have to obtain the API keys and add them to the pro
 11. In the sidebar select "Spark No-cost" and click **Upgrade**
 12. Select "Blaze" plan. Create a payment account and switch to this plan. Don't worry, you will still have a large free quota.
 13. In the sidebar select **Gear Button** -> **Project Settings**
-14. Click the button that looks like this: `</>`
+14. Click the button that looks like this: `</>`<br>
+    ![firebase web app icon](https://i.imgur.com/0cqYH0D.png)
 15. Type app nickname.
 16. Click "Register app".
 17.  Here is your firebaseConfig.
-18. Go to the project [root folder/hosting/src/lib/firebase-config.js](/hosting/src/lib/firebase-config.js).
+18. Go to the project [root folder/hosting/src/lib](/hosting/src/lib).
 19. Create&Open the "**firebase-config.js**" file and paste it. Like this:
 ```js
   export default {
@@ -49,10 +49,10 @@ You have to create two bots. One for development and one for production.
 Repeat the following steps twice to create two bots:
 1. Go to [BotFather](https://t.me/BotFather)
 2. Type `/newbot`
-3. Give a name
-4. Give a username
+3. Give a name.
+4. Give a username.
 5. Copy the token. Looks like this: `8162125942:DLFcAWwYQXICFIM2Vus3sGy_OLR3LtFARlE`
-This is a secret key, do not give it to anyone and do not publish it anywhere
+This is a secret key, do not give it to anyone and do not publish it anywhere.
 6. Go to the project [root folder/functions](/functions).
 7. Create&Open the "**config.json**". Paste bot tokens like this:
 ```json
@@ -68,11 +68,11 @@ You have to create two webapps. One for development and one for production.
 Repeat the following steps twice to create two webapps:
 1. Go to [BotFather](https://t.me/BotFather)
 2. Type `/newapp`
-3. Select your bot
-4. Enter title, description, upload photo
+3. Select your bot.
+4. Enter title, description, upload photo.
 5. Upload gif or skip `/empty`
 6. For now, send any valid URL.(https://google.com/).
-7. Enter short name
+7. Enter short name.
 8. Type `/myapps` and select created webapp.
 9. Copy **Direct Link** value.
 10. Go to the project [root folder/hosting](/hosting).
@@ -102,7 +102,7 @@ To make sure that requests to the server come from Telegram, you need to set a s
   "X-Telegram-Bot-Api-Secret-Token":"a8e92344-bd20-4ca7-a82e-6acfa491b7a7", // 1-256 characters. Only characters: [A-Z, a-z, 0-9, _ , - ] are allowed. 
 }
 ```
-You can enter any string that meets the requirements - or just generate a random GUID.
+You can enter [any](https://guidgenerator.com/) string that meets the requirements - or just generate a random GUID.
 
 ## Ngrok
 Telegram bot requires an SSL connection to the server. Therefore, to connect your development environment, you need ngrok.
@@ -117,7 +117,7 @@ Telegram bot requires an SSL connection to the server. Therefore, to connect you
 }
 ```
 ## Setup a payment provider
-The project has implemented the test provider for Stripe. When you connect a real one, you will have to implement the payment process in accordance with the provider's API. The places where this should be done and what exactly are marked with //TODO
+The project has implemented the test provider for Stripe. When you connect a real one, you will have to implement the payment process in accordance with the provider's API. The places where this should be done and what exactly are marked with `//TODO #`
 
 ### How to get a test payment key
 1. Go to [BotFather](https://t.me/BotFather)
@@ -143,7 +143,7 @@ The production bot must contain a real payment token `PAYMENT_PROVIDER_TOKEN`. B
 
 # Run dev
 1. Go to the project [root folder/hosting](/hosting)
-2. Type `npm run dev`
+2. Open terminal and Type `npm run dev`
 3. Open the project root folder in another terminal.
 4. Type <br>
 `firebase emulators:exec 'npm run dev' --ui  --only  'functions,firestore'`<br>
@@ -167,15 +167,15 @@ Done! Open the bot and write `/start`.
 
 Note: you can test the application on the same host. That is, in a browser or desktop application, you can also try to set up a mobile emulator. Unfortunately, the firestore emulator cannot work with a remote host. Therefore, you can open the app on your android device, but you cannot use the database.
 
-# TODO
+# TODO \#
 Open the search in your editor and search for `TODO #` - these are special comment tags that you need to work on before deploying (for real users, you can ignore these TODOs if you are deploying your app for testing or demo) your app. 
-It would be unnecessary to integrate, for example, a payment provider and use its API - because there are dozens of such providers and each has its own API - but you have **TODO comments** that will indicate **where** it should be done and **what** exactly.
+It would be overkill to integrate, for example, a payment provider and use its API - because there are dozens of such providers and each has its own API - but you have **TODO comments** that will indicate **where** it should be done and **what** exactly.
 
 # Deploy
 You don't need to build - it's ready to deploy.
 But if you changed the code and used a typescript, don't forget to build it.
 
-1. Open the root directory in CMD or VSCode terminal
+1. Open the root directory in terminal or VSCode terminal
 2. `firebase deploy` <br><br>
 **It deploys the following:**
 * New releases of your Firebase Hosting sites <br>
@@ -186,11 +186,13 @@ But if you changed the code and used a typescript, don't forget to build it.
 
 
 3. Go to Firebase console -> Hosting
-under the **Domains** section - you can see the domain of your hosting something like `[PROJECT_ID].web.app` - Copy the link.
+under the **Domains** section - you can see the domain of your hosting something like `[PROJECT_ID].web.app` - Copy the link.<br><br>
+![firebase domain](https://i.imgur.com/6H4WmAQ.png)
 4. Go to [@BotFather](https://t.me/BotFather)
 5. Type: `/myapps` then select your production web app. Then click `Edit Web App URL` -> Paste your domain
 6. You have to set [webhook](https://core.telegram.org/bots/api#setwebhook)
-7. The Webhook is printed to the console during the [dev run](https://github.com/ValeraKvip/tg-auction#run-dev) - you just need to follow the link.
+7. The Webhook is printed to the console during the [dev run](https://github.com/ValeraKvip/tg-auction#run-dev) under `DANGER` - you just need to follow the link.<br><br>
+![set prodauct webhook](https://i.imgur.com/HQAXUnT.png)
 
 # Test
 During testing, you don't want to wait a week to check if the end of the action and the selection of the winner works correctly. That's why several bot commands have been implemented  to simplify testing:
