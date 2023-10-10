@@ -1,4 +1,4 @@
-For the contest judges: [Contest.md](/Contest.md)
+For the contest judges: [Contest.md](/Contest.md) 
 
 # Install
 
