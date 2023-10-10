@@ -1,6 +1,6 @@
 # Install
 
-1. `git clone ValeraKvip/tg-auction`
+1. `git clone https://github.com/ValeraKvip/tg-auction.git`
 2. Make sure you have installed firebase cli  and are logged in [@see](https://firebase.google.com/docs/cli)
 3. Make sure you have the latest versions of **node.js** and **npm** installed
 4. Open project root folder in termianl
